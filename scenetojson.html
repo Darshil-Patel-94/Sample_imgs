@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Convert .scene to JSON</title>
+  <script type="module">
+    import CreativeEngine from 'https://cdn.img.ly/packages/imgly/cesdk-engine/1.54.0/index.js';
+
+    async function convertSceneToJson(file) {
+      const sceneString = await file.text();
+
+      const config = {
+        license: 'F6UOug9tkmx7wrfp7NBiEckK-3Me_QC8nIkrLZb-pK9xj8U0oLVc80-vjt8jNqE2',
+        userId: 'user-123',
+        baseURL: 'https://cdn.img.ly/packages/imgly/cesdk-engine/1.54.0/assets'
+      };
+
+      const engine = await CreativeEngine.init(config);
+      await engine.scene.loadFromString(sceneString);
+
+      const scene = engine.scene.get();
+      const pages = engine.block.findByType('page');
+      const page = pages[0];
+
+      const children = engine.block.getChildren(page);
+      const images = [];
+
+      for (const child of children) {
+        const type = engine.block.getType(child);
+        if (type !== 'graphic') continue;
+
+        const x = engine.block.getStyle(child, 'x');
+        const y = engine.block.getStyle(child, 'y');
+        const width = engine.block.getStyle(child, 'width');
+        const height = engine.block.getStyle(child, 'height');
+
+        const fill = engine.block.getFill(child);
+        const imageURI = engine.block.getString(fill, 'fill/image/imageFileURI');
+
+        images.push({ url: imageURI, x, y, width, height });
+      }
+
+      const outputJson = JSON.stringify({ images }, null, 2);
+      const blob = new Blob([outputJson], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'converted.json';
+      a.click();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('sceneFileInput');
+      input.addEventListener('change', () => {
+        if (input.files.length > 0) {
+          convertSceneToJson(input.files[0]).catch(console.error);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <h2>Select your .scene file:</h2>
+  <input type="file" id="sceneFileInput" accept=".scene" />
+</body>
+</html>

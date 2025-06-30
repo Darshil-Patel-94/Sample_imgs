@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Convert JSON to .scene</title>
+  <script type="module">
+    import CreativeEngine from 'https://cdn.img.ly/packages/imgly/cesdk-engine/1.54.0/index.js';
+
+    async function convertFileToScene(file) {
+      const text = await file.text();
+      const myJson = JSON.parse(text);
+
+      const config = {
+        license: 'F6UOug9tkmx7wrfp7NBiEckK-3Me_QC8nIkrLZb-pK9xj8U0oLVc80-vjt8jNqE2',
+        userId: 'user-123',
+        baseURL: 'https://cdn.img.ly/packages/imgly/cesdk-engine/1.54.0/assets'
+      };
+      const engine = await CreativeEngine.init(config);
+
+      let scene = engine.scene.get() ?? engine.scene.create();
+      const page = engine.block.create('page');
+      engine.block.appendChild(scene, page);
+
+      // Assumes your JSON has an images array with fields url, x, y, width, height
+      for (const img of myJson.images || []) {
+        const graphic = engine.block.create('graphic');
+        engine.block.setShape(graphic, engine.block.createShape('rect'));
+        engine.block.setStyle(graphic, {
+          x: img.x || 0, y: img.y || 0,
+          width: img.width || 100, height: img.height || 100
+        });
+
+        const fill = engine.block.createFill('image');
+        engine.block.setFill(graphic, fill);
+        engine.block.setString(fill, 'fill/image/imageFileURI', img.url);
+        engine.block.setEnum(graphic, 'contentFill/mode', 'Contain');
+        engine.block.appendChild(page, graphic);
+      }
+
+      engine.scene.zoomToBlock(page);
+      const sceneString = await engine.scene.saveToString();
+
+      // Download as .scene
+      const blob = new Blob([sceneString], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'converted.scene';
+      a.click();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('jsonFileInput');
+      input.addEventListener('change', () => {
+        if (input.files.length > 0) {
+          convertFileToScene(input.files[0]).catch(console.error);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <h2>Select your custom JSON file:</h2>
+  <input type="file" id="jsonFileInput" accept=".json" />
+</body>
+</html>
