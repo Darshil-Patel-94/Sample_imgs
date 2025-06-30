@@ -137,40 +137,6 @@
         }
       },
       {
-        "type": "text",
-        "text": "<useLetterColor><size=15><font id=\"6740498577912500749\" path=\"https://sample-imgs.vercel.app/text/3bd3fe9a9464df4555335393bb266aba/Modern.ttf\">[Remember i\u2019ll always love]</font></size></useLetterColor>",
-        "position": {
-          "x": 100,
-          "y": 300
-        },
-        "scale": {
-          "x": 1.0,
-          "y": 1.0
-        },
-        "style": {
-          "font": "https://sample-imgs.vercel.app/text/3bd3fe9a9464df4555335393bb266aba/Modern.ttf",
-          "fontSize": 30,
-          "textAlign": "center"
-        }
-      },
-      {
-        "type": "text",
-        "text": "<useLetterColor><shadow color=(0,0,0,0) offset=(0.056569,-0.056569) smooth=0.05555 angle=-45><size=15><font id=\"6740498577912500749\" path=\"https://sample-imgs.vercel.app/text/3bd3fe9a9464df4555335393bb266aba/Modern.ttf\">[YOU \u2764\ufe0f\u200d\ud83e\ude79]</font></size></shadow></useLetterColor>",
-        "position": {
-          "x": 100,
-          "y": 400
-        },
-        "scale": {
-          "x": 1.0,
-          "y": 1.0
-        },
-        "style": {
-          "font": "https://sample-imgs.vercel.app/text/3bd3fe9a9464df4555335393bb266aba/Modern.ttf",
-          "fontSize": 30,
-          "textAlign": "center"
-        }
-      },
-      {
         "type": "audio",
         "uri": "https://sample-imgs.vercel.app/audio/E947F208-D1EF-457B-B1FB-E8EE43EFAA85.mp3",
         "position": {

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CE.SDK Template Load Example</title>
+  <style>
+    html, body { margin:0; padding:0; height:100%; }
+    #cesdk-container { width:100%; height:100vh; }
+  </style>
+</head>
+<body>
+  <div id="cesdk-container"></div>
+
+  <script type="module">
+    import CreativeEngine from 'https://cdn.img.ly/packages/imgly/cesdk-engine/1.54.0/index.js';
+
+    const config = {
+      license: 'F6UOug9tkmx7wrfp7NBiEckK-3Me_QC8nIkrLZb-pK9xj8U0oLVc80-vjt8jNqE2', // Provide a valid license
+      userId: 'your-user-id',
+      baseURL: 'https://cdn.img.ly/packages/imgly/cesdk-engine/1.54.0/assets'
+    };
+
+    CreativeEngine.init(config).then(async engine => {
+      engine.addDefaultAssetSources();
+
+      // ✅ Load your scene as a template
+      await engine.scene.applyTemplateFromURL(
+        'https://sample-imgs.vercel.app/final.scene.json'
+      );
+
+      console.log('✅ Template applied');
+
+      // OPTIONAL: Inspect loaded blocks
+      const all = engine.block.findAllBlockIds();
+      console.log('Block types:', all.map(id => engine.block.getType(id)));
+
+      // Attach the UI
+      document.getElementById('cesdk-container').append(engine.element);
+    });
+  </script>
+</body>
+</html>
