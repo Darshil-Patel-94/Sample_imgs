@@ -1,0 +1,186 @@
+{
+  "scene": {
+    "type": "scene",
+    "width": 720,
+    "height": 1280,
+    "children": [
+      {
+        "type": "image",
+        "uri": "https://sample-imgs.vercel.app/video/IOS_ALBUM@BDB7BAD9-949D-4EB7-BFBF-6C99F20383A5_L0_001@1687372250000.png",
+        "position": {
+          "x": 500,
+          "y": 100
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        }
+      },
+      {
+        "type": "image",
+        "uri": "https://sample-imgs.vercel.app/video/6795111146530542094.png",
+        "position": {
+          "x": 550,
+          "y": 100
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        }
+      },
+      {
+        "type": "image",
+        "uri": "https://sample-imgs.vercel.app/video/cover/IOS_ALBUM@BFFC9B36-7A54-4D0C-B53A-51645ECB0E0B_L0_001@1689272736000.jpg",
+        "position": {
+          "x": 650,
+          "y": 100
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        }
+      },
+      {
+        "type": "image",
+        "uri": "https://sample-imgs.vercel.app/video/cover/IOS_ALBUM@B753D8B6-25DE-4699-A21C-94183CE992A0_L0_001@1689272547000.jpg",
+        "position": {
+          "x": 700,
+          "y": 100
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        }
+      },
+      {
+        "type": "image",
+        "uri": "https://sample-imgs.vercel.app/video/cover/IOS_ALBUM@96921D27-0C8D-4EC7-BA30-CCE21067172B_L0_001@1689272535000.jpg",
+        "position": {
+          "x": 750,
+          "y": 100
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        }
+      },
+      {
+        "type": "image",
+        "uri": "https://sample-imgs.vercel.app/video/cover/IOS_ALBUM@CDCE560C-CDA6-4318-B218-F6F28B4EB760_L0_001@1689272530000.jpg",
+        "position": {
+          "x": 800,
+          "y": 100
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        }
+      },
+      {
+        "type": "image",
+        "uri": "https://sample-imgs.vercel.app/video/cover/IOS_ALBUM@02AFE59E-1CBF-4AEB-BA62-F1FA948DEDA5_L0_001@1689272504000.jpg",
+        "position": {
+          "x": 850,
+          "y": 100
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        }
+      },
+      {
+        "type": "image",
+        "uri": "https://sample-imgs.vercel.app/video/cover/IOS_ALBUM@1603A00E-4C14-49A3-AA12-1D93E5E852B2_L0_001@1689272458000.jpg",
+        "position": {
+          "x": 900,
+          "y": 100
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        }
+      },
+      {
+        "type": "image",
+        "uri": "https://sample-imgs.vercel.app/video/cover/IOS_ALBUM@0F0F4216-298E-43E6-AC8B-08E5A7CED6E2_L0_001@1689272665000.jpg",
+        "position": {
+          "x": 950,
+          "y": 100
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        }
+      },
+      {
+        "type": "image",
+        "uri": "https://sample-imgs.vercel.app/video/cover/IOS_ALBUM@AD831506-BBCE-4B6B-91E9-3CDA55039DEC_L0_001@1689272652000.jpg",
+        "position": {
+          "x": 1000,
+          "y": 100
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        }
+      },
+      {
+        "type": "image",
+        "uri": "https://sample-imgs.vercel.app/video/cover/IOS_ALBUM@81B0FB31-94C3-42B2-8283-C21B4D552D70_L0_001@1689272434000.jpg",
+        "position": {
+          "x": 1050,
+          "y": 100
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        }
+      },
+      {
+        "type": "text",
+        "text": "<useLetterColor><size=15><font id=\"6740498577912500749\" path=\"https://sample-imgs.vercel.app/text/3bd3fe9a9464df4555335393bb266aba/Modern.ttf\">[Remember i\u2019ll always love]</font></size></useLetterColor>",
+        "position": {
+          "x": 100,
+          "y": 300
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        },
+        "style": {
+          "font": "https://sample-imgs.vercel.app/text/3bd3fe9a9464df4555335393bb266aba/Modern.ttf",
+          "fontSize": 30,
+          "textAlign": "center"
+        }
+      },
+      {
+        "type": "text",
+        "text": "<useLetterColor><shadow color=(0,0,0,0) offset=(0.056569,-0.056569) smooth=0.05555 angle=-45><size=15><font id=\"6740498577912500749\" path=\"https://sample-imgs.vercel.app/text/3bd3fe9a9464df4555335393bb266aba/Modern.ttf\">[YOU \u2764\ufe0f\u200d\ud83e\ude79]</font></size></shadow></useLetterColor>",
+        "position": {
+          "x": 100,
+          "y": 400
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        },
+        "style": {
+          "font": "https://sample-imgs.vercel.app/text/3bd3fe9a9464df4555335393bb266aba/Modern.ttf",
+          "fontSize": 30,
+          "textAlign": "center"
+        }
+      },
+      {
+        "type": "audio",
+        "uri": "https://sample-imgs.vercel.app/audio/E947F208-D1EF-457B-B1FB-E8EE43EFAA85.mov",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "metadata": {
+          "start": 0
+        }
+      }
+    ]
+  }
+}
